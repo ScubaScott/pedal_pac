@@ -32,11 +32,11 @@
         "source": "C:\\Users\\scuba\\Dropbox\\Docs\\Android\\apps\\Android-master\\Examples\\Android Studio Examples\\Chat\\res\\layout\\loading_process_dialog_anim.xml"
     },
     {
-        "merged": "E:\\GitHub\\Andriod\\pedal_pac\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
-        "source": "E:\\GitHub\\Andriod\\pedal_pac\\res\\layout\\main.xml"
-    },
-    {
         "merged": "E:\\GitHub\\Andriod\\pedal_pac\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
         "source": "E:\\GitHub\\Andriod\\pedal_pac\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "E:\\GitHub\\Andriod\\pedal_pac\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "E:\\GitHub\\Andriod\\pedal_pac\\res\\layout\\main.xml"
     }
 ]

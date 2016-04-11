@@ -1,5 +1,6 @@
 package com.redbear.chat;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -32,6 +33,7 @@ public class Chat extends Activity {
 	private EditText et = null;
 	private Button btnUnlock = null;
 	private Button btnLock = null;
+	private Button btnAuth = null;
 	private String mDeviceName;
 	private String mDeviceAddress;
 	private RBLService mBluetoothLeService;
@@ -81,29 +83,20 @@ public class Chat extends Activity {
 
 		tv = (TextView) findViewById(R.id.textView);
 		tv.setMovementMethod(ScrollingMovementMethod.getInstance());
-		btnUnlock = (Button) findViewById(R.id.unlock);
-		btnUnlock.setOnClickListener(new OnClickListener() {
+		btnAuth = (Button) findViewById(R.id.Auth);
+		btnAuth.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				BluetoothGattCharacteristic characteristic = map
 						.get(RBLService.UUID_BLE_SHIELD_TX);
 
-				String str = "UNLOCK";
-				byte b = 0x00;
-				byte[] tmp = str.getBytes();
-				byte[] tx = new byte[tmp.length + 1];
-				tx[0] = b;
-				for (int i = 1; i < tmp.length + 1; i++) {
-					tx[i] = tmp[i - 1];
-				}
-
-				characteristic.setValue(tx);
+				characteristic.setValue("AUTH");
 				mBluetoothLeService.writeCharacteristic(characteristic);
 
 			}
 		});
-		btnLock = (Button) findViewById(R.id.lock);
+		btnLock = (Button) findViewById(R.id.Lock);
 		btnLock.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -111,16 +104,20 @@ public class Chat extends Activity {
 				BluetoothGattCharacteristic characteristic = map
 						.get(RBLService.UUID_BLE_SHIELD_TX);
 
-				String str = "LOCK";
-				byte b = 0x00;
-				byte[] tmp = str.getBytes();
-				byte[] tx = new byte[tmp.length + 1];
-				tx[0] = b;
-				for (int i = 1; i < tmp.length + 1; i++) {
-					tx[i] = tmp[i - 1];
-				}
+				characteristic.setValue("LOCK");
+				mBluetoothLeService.writeCharacteristic(characteristic);
 
-				characteristic.setValue(tx);
+			}
+		});
+		btnUnlock = (Button) findViewById(R.id.Unlock);
+		btnUnlock.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				BluetoothGattCharacteristic characteristic = map
+						.get(RBLService.UUID_BLE_SHIELD_TX);
+
+				characteristic.setValue("UNLOCK");
 				mBluetoothLeService.writeCharacteristic(characteristic);
 
 			}
@@ -177,6 +174,7 @@ public class Chat extends Activity {
 	private void displayData(byte[] byteArray) {
 		if (byteArray != null) {
 			String data = new String(byteArray);
+			Log.i("data?",data);
 			tv.append(data);
 			// find the amount we need to scroll. This works by
 			// asking the TextView's internal layout for the position

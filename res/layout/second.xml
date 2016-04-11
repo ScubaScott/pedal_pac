@@ -30,22 +30,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
+
             <Button
-                android:id="@+id/unlock"
-                style="@style/button_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/red_button"
-                android:text="unlock" />
-            <Button
-                android:id="@+id/lock"
+                android:id="@+id/Lock"
                 style="@style/button_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/red_button"
                 android:text="lock" />
+            <Button
+                android:id="@+id/Auth"
+                style="@style/button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/red_button"
+                android:text="Auth" />
+            <Button
+                android:id="@+id/Unlock"
+                style="@style/button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/red_button"
+                android:text="Unlock" />
         </RelativeLayout>
     </LinearLayout>
 

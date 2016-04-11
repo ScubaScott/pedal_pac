@@ -20,17 +20,18 @@ public final class R {
         public static final int redbear=0x7f020002;
     }
     public static final class id {
+        public static final int Auth=0x7f080009;
         public static final int CurdeviceName=0x7f080006;
-        public static final int action_settings=0x7f08000a;
+        public static final int Lock=0x7f080008;
+        public static final int Unlock=0x7f08000a;
+        public static final int action_settings=0x7f08000b;
         public static final int btn=0x7f080005;
         public static final int deviceAddr=0x7f080002;
         public static final int deviceName=0x7f080001;
         public static final int listView=0x7f080000;
-        public static final int lock=0x7f080009;
         public static final int pageloading=0x7f080003;
         public static final int textView=0x7f080007;
         public static final int tv=0x7f080004;
-        public static final int unlock=0x7f080008;
     }
     public static final class layout {
         public static final int device_list=0x7f030000;
